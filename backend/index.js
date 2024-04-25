@@ -35,6 +35,10 @@ mongoose
 
 //get method
 //Read method
+
+app.get("/", (req, res) => {
+  res.send("Hi there")
+})
 app.get("/todos", async (req, res) => {
 	// res.send("Hello Perth!");
 	try {
