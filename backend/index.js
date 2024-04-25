@@ -8,6 +8,8 @@ const mongoose = require("mongoose");
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 //setting middleware
 app.use(express.json()); //
 app.use(express.urlencoded({ extended: true }));
@@ -23,8 +25,8 @@ mongoose
 	.connect(connectionString)
 	.then(() => {
 		console.log("Connected to the database");
-		app.listen(3000, function () {
-			console.log("server running at port 3000");
+		app.listen(port, function () {
+			console.log(`server running at port ${port}`);
 		});
 	})
 	.catch((err) => console.log(err));
